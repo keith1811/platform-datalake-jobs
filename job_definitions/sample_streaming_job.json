@@ -1,0 +1,50 @@
+{
+    "job_id": {{job_id}},
+    "creator_user_name": {{creator_user_name}},
+    "run_as_user_name": {{run_as_user_name}},
+    "run_as_owner": true,
+    "settings": {
+        "name": {{job_name}},
+        "email_notifications": {
+            "no_alert_for_skipped_runs": false
+        },
+        "webhook_notifications": {},
+        "timeout_seconds": 0,
+        "max_concurrent_runs": 1,
+        "tasks": [
+            {
+                "task_key": {{task_key}},
+                "notebook_task": {
+                    "notebook_path": "notebooks/sample_streaming_job",
+                    "base_parameters": {
+                        "env": {{env}},
+                        "job_name": {{job_name}}
+                    },
+                    "source": "GIT"
+                },
+                "existing_cluster_id": {{cluster_id}},
+                "max_retries": 2,
+                "min_retry_interval_millis": 300000,
+                "retry_on_timeout": true,
+                "timeout_seconds": 60,
+                "email_notifications": {
+                    "on_start": [
+                        {{notification_mailing_list}}
+                    ],
+                    "on_success": [
+                        {{notification_mailing_list}}
+                    ],
+                    "on_failure": [
+                        {{notification_mailing_list}}
+                    ]
+                }
+            }
+        ],
+        "git_source": {
+            "git_url": "https://github.tools.sap/BNA/platform-datalake-jobs.git",
+            "git_provider": "gitHub",
+            "git_branch": {{git_branch}}
+        },
+        "format": "MULTI_TASK"
+    }
+}

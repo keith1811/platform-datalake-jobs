@@ -1,0 +1,20 @@
+secret_scope: bna-sandbox-vault
+
+broker:
+  id: QDEUG7JF36KKFF2E
+  secret_key: kafka-broker-QDEUG7JF36KKFF2E
+  host: lkc-vrp9g0-g4q7zp.westus2.azure.glb.confluent.cloud
+  port: 9092
+
+schema_registry:
+  id: YNLPSUXE6BO2PXVM
+  secret_key: schema-registry-YNLPSUXE6BO2PXVM
+  url: "https://psrc-3508o.westus2.azure.confluent.cloud"
+
+zone_type:
+  raw:
+    storage_account_path: "abfss://sc1man02-raw@bnasandboxsa.dfs.core.windows.net"
+    database_name: "sc1man02_raw"
+  consumption:
+    storage_account_path: "abfss://sc1man02-consumption@bnasandboxsa.dfs.core.windows.net"
+    database_name: "sc1man02_consumption"
